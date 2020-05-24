@@ -69,31 +69,31 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	tmux
-	ansible
-	history 
-	dirhistory
-	alias-finder
-	copybuffer
-	copydir
-	copyfile
-	extract
-	fancy-ctrl-z
-	fd
-	git
+	tmux         # aliases for tmux cmds
+	ansible      # aliases for ansible cmds
+	history      # aliases for history cmds
+	dirhistory   # alt+up (Move into the parent directory)
+	alias-finder # alias-finder -l "git pull"
+	copybuffer   # ctrl-o to copy current command in cli
+	copydir      # copy current directory to the clipboard
+	copyfile     # copy file contents to the clipboard
+	extract      # extract filename.ext
+	fancy-ctrl-z # exit from vim and restore session
+	fd           # find files/directories
+	git          #
 	git-prompt
 	git-auto-fetch
 	git-extras
-	sudo
-	yum
-	web-search
-	wd
-	transfer
-	httpie
-	fzf
-	vscode
-	gas
-	zsh_reload
+	sudo         # esc two times to prefix sudo
+	yum          # aliases for yum cmds
+	web-search   # google keyword
+	wd           # warpdirectory (wp add shell)
+	transfer     # upload file to transfer.sh
+	httpie       # httpie auto-completion
+#	fzf
+	vscode       # visual studio code alias
+	gas          # git-authors switcher
+	zsh_reload   # src cmd to reload .zshrc
 )
 
 source $ZSH/oh-my-zsh.sh
