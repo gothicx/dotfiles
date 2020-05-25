@@ -58,7 +58,7 @@ ZSH_THEME="robbyrussell"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy/mm/dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -90,8 +90,9 @@ plugins=(
 	wd           # warpdirectory (wp add shell)
 	transfer     # upload file to transfer.sh
 	httpie       # httpie auto-completion
+	shell-proxy  # define proxy env variables
 #	fzf
-	vscode       # visual studio code alias
+#	vscode       # visual studio code alias
 	gas          # git-authors switcher
 	zsh_reload   # src cmd to reload .zshrc
 )
@@ -107,12 +108,9 @@ export ZSH_THEME_GIT_PROMPT_CACHE=1
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [ -z "$TMUX" ]; then
+  tmux
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -122,6 +120,13 @@ export ZSH_THEME_GIT_PROMPT_CACHE=1
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="mate ~/.zshrc"
+alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vi=vim
+alias s=ssh
+alias c=clear
+alias cx='chmod +x'
+alias ls='ls -thor'
+alias more=less
+alias ps='ps auxf'
+alias ..='cd ..'
