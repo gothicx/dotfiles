@@ -90,7 +90,7 @@ plugins=(
 	wd           # warpdirectory (wp add shell)
 	transfer     # upload file to transfer.sh
 	httpie       # httpie auto-completion
-	shell-proxy  # define proxy env variables
+#	shell-proxy  # define proxy env variables
 #	fzf
 #	vscode       # visual studio code alias
 	gas          # git-authors switcher
