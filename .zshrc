@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +15,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -61,7 +68,7 @@ ZSH_THEME="robbyrussell"
 HIST_STAMPS="yyyy/mm/dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+#ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -88,8 +95,8 @@ plugins=(
 	yum          # aliases for yum cmds
 	web-search   # google keyword
 	wd           # warpdirectory (wp add shell)
-	transfer     # upload file to transfer.sh
-	httpie       # httpie auto-completion
+#	transfer     # upload file to transfer.sh
+#	httpie       # httpie auto-completion
 #	shell-proxy  # define proxy env variables
 #	fzf
 #	vscode       # visual studio code alias
@@ -126,7 +133,14 @@ alias vi=vim
 alias s=ssh
 alias c=clear
 alias cx='chmod +x'
-alias ls='ls -thor'
+alias ls='lsd -l'
 alias more=less
 alias ps='ps auxf'
 alias ..='cd ..'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#source /usr/share/powerline/bash/powerline.sh
+#
+# FZF
+[ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
